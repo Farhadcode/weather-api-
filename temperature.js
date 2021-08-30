@@ -15,9 +15,9 @@ const searchLocation = () => {
 //searchLocation();
 
 const weatherUpdate = (data) => {
-    // console.log(data);
+    console.log(data);
     // console.log(data.name);
-
+    //    
     let tem = `${data.main.temp - 273.15}`
     let temparatur = parseFloat(tem).toFixed(2);
     // console.log(data.weather[0].description);
@@ -26,6 +26,7 @@ const weatherUpdate = (data) => {
 
     div.innerHTML = `
        <h1>${data.name}</h1>
+       <h4>${data.sys.country}</h4>
        <h3><span>${temparatur}</span>&deg;C</h3>
        <h1 class="lead">${data.weather[0].description}</h1>
     `

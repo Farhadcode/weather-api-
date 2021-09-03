@@ -14,21 +14,22 @@ const searchLocation = () => {
 }
 //searchLocation();
 
-const weatherUpdate = (data) => {
-    console.log(data);
+const weatherUpdate = (temperatur) => {
+    //. console.log(temperatur);
     // console.log(data.name);
     //    
-    let tem = `${data.main.temp - 273.15}`
-    let temparatur = parseFloat(tem).toFixed(2);
+    let tem = `${temperatur.main.temp - 273.15}`
+    let result = parseFloat(tem).toFixed(2);
     // console.log(data.weather[0].description);
 
     const div = document.getElementById('weather-update');
 
     div.innerHTML = `
-       <h1>${data.name}</h1>
-       <h4>${data.sys.country}</h4>
-       <h3><span>${temparatur}</span>&deg;C</h3>
-       <h1 class="lead">${data.weather[0].description}</h1>
+    <img src="https://openweathermap.org/img/wn/${temperatur.weather[0].icon}.png" alt="">
+       <h1>${temperatur.name}</h1>
+       <h4>${temperatur.sys.country}</h4>
+       <h3><span>${result}</span>&deg;C</h3>
+       <h1 class="lead">${temperatur.weather[0].description}</h1>
     `
 
 }
